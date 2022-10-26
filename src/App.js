@@ -48,6 +48,15 @@ const App = () => {
         }}
         PerPage={n}
       />
+      <div style={{ marginTop: "5%" }}>
+        <h3>
+          {" "}
+          check code in My Github repository{" "}
+          <a href="https://github.com/khamais-maaroufi/khemais-Paginator.git">
+            Click here
+          </a>
+        </h3>
+      </div>
     </div>
   );
 };
