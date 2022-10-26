@@ -1,0 +1,50 @@
+.paginator-container {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.circle-pgin {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  clip-path: circle(50% at 50% 50%);
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.circle-pgin:hover {
+  background-color: #1eb3b2;
+  color: white;
+}
+
+.circle-pgin:active {
+  background-color: #003f46;
+  transform: scale(1.2);
+}
+.flache {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.flache img {
+cursor: pointer;
+  width: 25px;
+  height: 25px;
+transition: 0.5s;
+}
+
+.flache img:hover {
+transform: scale(1.2);
+}
+#leftdds:active {
+    transform: translateX(-25px);
+}
+#rightfsf:active {
+    transform: translateX(25px);
+}
