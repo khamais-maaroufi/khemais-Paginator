@@ -10,7 +10,7 @@ const Paginator = (props) => {
     if (rest === 0) {
       nbPages = Number(longeur) / PerPage;
     } else {
-      nbPages = Number(longeur) / PerPage + 1;
+      nbPages = ((Number(longeur)-rest) / PerPage) + 1;
     }
   }
 
@@ -60,22 +60,36 @@ const Paginator = (props) => {
     }
   };
   const handelNext = () => {
-    if (CurrentP < nbPages-1) {
+    if (CurrentP < nbPages ) {
       let varii = 0;
       varii = Number(CurrentP) + 1;
       setCurrentP(varii);
-      
     }
+  };
+  const JumpToStart = () => {
+    setCurrentP(1);
+  };
+  const JumpToEnd = () => {
+    setCurrentP(nbPages);
+    
   };
   return (
     <div className="paginator-container">
-      <div className="flache" onClick={handelprev}>
-        {" "}
-        <img
-          id="leftdds"
-          src="https://cdn-icons-png.flaticon.com/512/860/860790.png"
-          onClick={handelprev}
-        ></img>
+      <div className="hefubuer">
+        <div className="jumper" id="leftdds" onClick={JumpToStart}>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/54/54227.png"
+            alt="jump-to-start"
+          ></img>
+        </div>
+        <div className="flache" onClick={handelprev}>
+          {" "}
+          <img
+            id="leftdds"
+            src="https://cdn-icons-png.flaticon.com/512/860/860790.png"
+            onClick={handelprev}
+          ></img>
+        </div>
       </div>
       {pages &&
         pages.map((item) => (
@@ -88,13 +102,21 @@ const Paginator = (props) => {
             {item}
           </div>
         ))}
-      <div className="flache" onClick={handelNext}>
-        {" "}
-        <img
-          id="rightfsf"
-          src="https://cdn-icons-png.flaticon.com/512/860/860828.png"
-          onClick={handelNext}
-        ></img>
+      <div className="hefubuer">
+        <div className="flache" onClick={handelNext}>
+          {" "}
+          <img
+            id="rightfsf"
+            src="https://cdn-icons-png.flaticon.com/512/860/860828.png"
+            onClick={handelNext}
+          ></img>
+        </div>
+        <div className="jumper" id="rightfsf" onClick={JumpToEnd}>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/54/54366.png"
+            alt="jump-to-end"
+          ></img>
+        </div>
       </div>
     </div>
   );

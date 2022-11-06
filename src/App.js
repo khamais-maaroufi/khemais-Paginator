@@ -19,6 +19,9 @@ const App = () => {
     "11",
     "12",
     "13",
+    "17",
+    "18",
+    "19"
   ];
 
   /*explaining Usability here 
